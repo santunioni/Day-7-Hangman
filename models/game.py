@@ -5,7 +5,7 @@ from random import choice
 from models.arts import chances
 
 
-def play(*, word=choice(word_list), chances=chances):
+def run_game(*, word=choice(word_list), chances=chances):
     
     word = word.title()
 
