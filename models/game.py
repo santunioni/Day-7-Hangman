@@ -31,9 +31,6 @@ def run_game(*, word: str = random_word, chances: int = NUMBER_OF_CHANCES) -> No
         guess = screen(chances, word_to_show, already_chosen)
         if not guess:
             break
-        else:
-            # Take only the first word from the input
-            guess = guess[0]
 
         already_chosen += guess
 
