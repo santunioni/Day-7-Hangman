@@ -13,6 +13,7 @@ def run_game(*, word: str, chances: int = NUMBER_OF_CHANCES) -> None:
 
     while chances >= 0:
 
+        guess = ''
         if '_' not in current_word_list:
             screen(chances, word_to_display, already_chosen, won=True)
             break
