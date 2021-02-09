@@ -15,20 +15,11 @@ def run_game(*, word: str, chances: int = NUMBER_OF_CHANCES) -> None:
 
         if '_' not in current_word_list:
             screen(chances, word_to_display, already_chosen, won=True)
-
-            if chances == 1:
-                number_of_chances = f"{chances} chance"
-            else:
-                number_of_chances = f"{chances} chances"
-
-            print(f"You guessed the word '{word_to_display.replace(' ', '')} with {number_of_chances} remaining!")
             break
 
-        guess = screen(chances, word_to_display, already_chosen)
-        if not guess:
-            break
-
-        already_chosen += guess
+        elif chances > 0:
+            guess = screen(chances, word_to_display, already_chosen)
+            already_chosen += guess
 
         char_positions = check.letter_in(guess, word=word)
         if char_positions:

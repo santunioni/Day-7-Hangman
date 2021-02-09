@@ -13,40 +13,51 @@ def clear():
         _ = system('clear')
 
 
-def screen(chances, word_to_show, already_chosen, won=False):
+def screen(chances, word_to_display, already_chosen,/ , *, won=False):
 
-    guess_word = True
-
+    # Clean the screen
     clear()
+    # Make head
     print(LOGO + "\n\n")
-    
     print(STAGES[chances], end="\n\n")
 
-    if chances > 0:
-        print(f"Number of chances: {chances}")
-    else:
-        guess_word = False
-        print("You are dead.")
+    # Setup the initial message
+    message = f"""\nGuess a character for the word: {word_to_display}
+Already chosen characters: {already_chosen}
+"""
 
-    message = f"""\nGuess a character for the word: {word_to_show}
-        Already chosen characters: {already_chosen}
-        """
-    if guess_word and not won:
+    if won:
+        # Message to print if already won 
+        print(f"Number of chances: {chances}")
+        print(message)
+
+        if chances == 1:
+            number_of_chances = f"{chances} chance"
+        else:
+            number_of_chances = f"{chances} chances"
+
+        print(f"You guessed the word '{word_to_display.replace(' ', '')}' with {number_of_chances} remaining!")
+
+        # End the function
+        return None
+
+    elif chances > 0:
+        # Message to print in case there are chances to wast
+        print(f"Number of chances: {chances}")
 
         char_guess = input(message + "Choose: ")
 
         if not char_guess:
-            char_guess = screen(chances, word_to_show, already_chosen)
+            char_guess = screen(chances, word_to_display, already_chosen)
 
         char_guess = char_guess.lower()[0]
 
         if char_guess in already_chosen:
-            char_guess = screen(chances, word_to_show, already_chosen)
+            char_guess = screen(chances, word_to_display, already_chosen)
 
         return char_guess
 
-    elif won:
+    # Message to print if have zero chances and didn't won
+    print("You are dead.")
 
-        print(message + "\n")
-
-    return False
+    return None

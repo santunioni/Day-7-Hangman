@@ -213,3 +213,4 @@ WORD_LIST = [
     'zodiac',
     'zombie'
 ]
+WORD_LIST = ['happy']

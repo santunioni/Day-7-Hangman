@@ -11,7 +11,7 @@ def main() -> None:
 
         run_game(word=random.choice(WORD_LIST))
 
-        play_again_str = input('\n\nDo you wanna play again (y/n)? ')
+        play_again_str = input('\nDo you wanna play again (y/n)? ')
         if play_again_str.lower()[0] == 'y':
             play_again = True
             print("\n\nStarting again ...\n")
