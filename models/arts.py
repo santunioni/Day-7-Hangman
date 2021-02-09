@@ -1,4 +1,4 @@
-STAGES: list[str] = ["""\
+STAGES = ["""\
   +---+
   |   |
   O   |

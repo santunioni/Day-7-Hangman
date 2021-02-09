@@ -34,9 +34,13 @@ def screen(chances, word_to_show, already_chosen, won=False):
     if guess_word and not won:
 
         char_guess = input(message + "Choose: ")
+
+        if not char_guess:
+            char_guess = screen(chances, word_to_show, already_chosen)
+
         char_guess = char_guess.lower()[0]
 
-        while char_guess in already_chosen:
+        if char_guess in already_chosen:
             char_guess = screen(chances, word_to_show, already_chosen)
 
         return char_guess

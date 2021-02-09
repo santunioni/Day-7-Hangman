@@ -1,4 +1,4 @@
-def letter_in(letter: str, /, *, word: str) -> list[int]:
+def letter_in(letter: str, /, *, word: str):
     letter, word = letter.lower(), word.lower()
     letter_positions = []
 
@@ -9,7 +9,7 @@ def letter_in(letter: str, /, *, word: str) -> list[int]:
     return letter_positions
 
 
-def spaced_string(wordlist: list[str]) -> str:
+def spaced_string(wordlist) -> str:
 
     if wordlist[0] != '_':
         wordlist[0] = wordlist[0].title()
