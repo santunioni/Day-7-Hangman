@@ -13,7 +13,7 @@ def clear():
         _ = system('clear')
 
 
-def screen(chances, word_to_show, already_chosen):
+def screen(chances, word_to_show, already_chosen, won=False):
 
     guess_word = True
 
@@ -28,16 +28,21 @@ def screen(chances, word_to_show, already_chosen):
         guess_word = False
         print("You are dead.")
 
-    if guess_word:
-
-        char_guess = input(f"""\nGuess a character for the word: {word_to_show}
+    message = f"""\nGuess a character for the word: {word_to_show}
         Already chosen characters: {already_chosen}
-        Choose: """)
+        """
+    if guess_word and not won:
+
+        char_guess = input(message + "Choose: ")
         char_guess = char_guess.lower()
 
         while char_guess in already_chosen:
             char_guess = screen(chances, word_to_show, already_chosen)
 
         return char_guess
+
+    elif won:
+
+        print(message + "\n")
 
     return False

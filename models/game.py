@@ -17,7 +17,8 @@ def run_game(*, word=choice(word_list), chances=chances):
     while chances >= 0:
 
         if current_word == word:
-            print(f"\nYou guessed the word '{current_word}' with {chances} chances remaining!")
+            screen(chances, word_to_show, already_chosen, won=True)
+            print(f"You guessed the word '{current_word}' with {chances} chances remaining!")
             break
 
         guess = screen(chances, word_to_show, already_chosen)
