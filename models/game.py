@@ -1,4 +1,3 @@
-
 import models.checks as check
 from models.screen import screen
 from models.words import word_list

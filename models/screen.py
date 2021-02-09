@@ -1,5 +1,16 @@
-from replit import clear
 from models.arts import stages, logo
+from os import system, name
+
+
+# define our clear function
+def clear():
+    # for windows
+    if name == 'nt':
+        _ = system('cls')
+
+        # for mac and linux(here, os.name is 'posix')
+    else:
+        _ = system('clear')
 
 
 def screen(chances, word_to_show, already_chosen):
