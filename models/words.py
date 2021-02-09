@@ -73,6 +73,7 @@ WORD_LIST = [
     'haiku',
     'haphazard',
     'hyphen',
+    'happy',
     'iatrogenic',
     'icebox',
     'injury',
@@ -213,4 +214,4 @@ WORD_LIST = [
     'zodiac',
     'zombie'
 ]
-WORD_LIST = ['happy']
+# WORD_LIST = ['happy']
