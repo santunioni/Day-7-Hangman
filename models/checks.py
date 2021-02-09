@@ -1,4 +1,4 @@
-def letter_in(letter: str, /, *, word: str):
+def letter_in(letter: str, /, *, word: str) -> list[int]:
     letter, word = letter.lower(), word.lower()
     letter_positions = []
     start = 0
@@ -17,7 +17,7 @@ def letter_in(letter: str, /, *, word: str):
     return letter_positions
 
 
-def sum_to_string(wordlist) -> str:
+def sum_to_string(wordlist: list[str]) -> tuple[str, str]:
     string = ""
     string_with_spaces = ""
     for character in wordlist:
@@ -28,7 +28,7 @@ def sum_to_string(wordlist) -> str:
     return string, string_with_spaces
 
 
-def compile(wordlist):
+def compile_words(wordlist: list[str]) -> tuple[str, str]:
     if wordlist[0] != '_':
         wordlist[0] = wordlist[0].title()
     return sum_to_string(wordlist)

@@ -1,4 +1,4 @@
-from models.arts import stages, logo
+from models.arts import STAGES, LOGO
 from os import system, name
 
 
@@ -18,9 +18,9 @@ def screen(chances, word_to_show, already_chosen, won=False):
     guess_word = True
 
     clear()
-    print(logo + "\n\n")
+    print(LOGO + "\n\n")
     
-    print(stages[chances], end="\n\n")
+    print(STAGES[chances], end="\n\n")
 
     if chances > 0:
         print(f"Number of chances: {chances}")

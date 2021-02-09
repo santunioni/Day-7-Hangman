@@ -1,4 +1,4 @@
-stages = ['''\
+STAGES: list[str] = ['''\
   +---+
   |   |
   O   |
@@ -56,9 +56,9 @@ stages = ['''\
 =========\
 ''']
 
-chances = len(stages)-1
+CHANCES: int = len(STAGES) - 1
 
-logo = ''' 
+LOGO: str = ''' 
  _                                             
 | |                                            
 | |__   __ _ _ __   __ _ _ __ ___   __ _ _ __  
