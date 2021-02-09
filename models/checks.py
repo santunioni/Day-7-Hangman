@@ -1,34 +1,25 @@
 def letter_in(letter: str, /, *, word: str) -> list[int]:
     letter, word = letter.lower(), word.lower()
     letter_positions = []
-    start = 0
 
-    while start <= len(word):
-        if letter.lower() in word.lower()[start::]:
-
-            position = word.lower().index(letter, start)
+    for position in range(len(word)):
+        if word[position] == letter:
             letter_positions.append(position)
-
-            start = position + 1
-            del position
-        else:
-            break
 
     return letter_positions
 
 
-def sum_to_string(wordlist: list[str]) -> tuple[str, str]:
-    string = ""
-    string_with_spaces = ""
-    for character in wordlist:
-        string_with_spaces += " "
-        string_with_spaces += character
-        string += character
+def spaced_string(wordlist: list[str]) -> str:
 
-    return string, string_with_spaces
-
-
-def compile_words(wordlist: list[str]) -> tuple[str, str]:
     if wordlist[0] != '_':
         wordlist[0] = wordlist[0].title()
-    return sum_to_string(wordlist)
+
+    string_with_spaces = ""
+    for character in wordlist:
+        string_with_spaces += character
+        string_with_spaces += " "
+
+    # removing last space
+    string_with_spaces = string_with_spaces[:-1:]
+
+    return string_with_spaces

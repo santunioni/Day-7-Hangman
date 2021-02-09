@@ -1,7 +1,7 @@
 from models.words import WORD_LIST
 from models.game import run_game
-from datetime import datetime
 import random
+# the time module is imported for improving user experience with the sleep() function
 import time
 
 
@@ -9,7 +9,6 @@ def main() -> None:
     play_again: bool = True
     while play_again:
 
-        random.seed(datetime.now().microsecond)
         run_game(word=random.choice(WORD_LIST))
 
         play_again_str = input('\n\nDo you wanna play again (y/n)? ')
