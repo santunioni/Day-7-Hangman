@@ -4,9 +4,10 @@ from models.words import word_list
 from random import choice
 from models.arts import chances
 
+random_word = choice(word_list)
 
-def run_game(*, word=choice(word_list), chances=chances):
-    
+
+def run_game(*, word=random_word, chances=chances):
     word = word.title()
 
     current_word_list = ('_ ' * len(word)).split()
@@ -18,16 +19,24 @@ def run_game(*, word=choice(word_list), chances=chances):
 
         if current_word == word:
             screen(chances, word_to_show, already_chosen, won=True)
-            print(f"You guessed the word '{current_word}' with {chances} chances remaining!")
+
+            if chances == 1:
+                number_of_chances = f"{chances} chance"
+            else:
+                number_of_chances = f"{chances} chances"
+
+            print(f"You guessed the word '{current_word}' with {number_of_chances} remaining!")
             break
 
         guess = screen(chances, word_to_show, already_chosen)
-
         if not guess:
             break
+        else:
+            # Take only the first word from the input
+            guess = guess[0]
 
         already_chosen += guess
-          
+
         char_positions = check.letter_in(guess, word=word)
         if char_positions:
             for position in char_positions:
