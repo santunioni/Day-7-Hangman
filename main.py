@@ -1,4 +1,7 @@
+from models.words import WORD_LIST
 from models.game import run_game
+from datetime import datetime
+import random
 import time
 
 
@@ -6,7 +9,8 @@ def main() -> None:
     play_again: bool = True
     while play_again:
 
-        run_game()
+        random.seed(datetime.now().microsecond)
+        run_game(word=random.choice(WORD_LIST))
 
         play_again_str = input('\n\nDo you wanna play again (y/n)? ')
         if play_again_str.lower()[0] == 'y':

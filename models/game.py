@@ -1,13 +1,9 @@
 import models.checks as check
 from models.screen import screen
-from models.words import word_list
-from random import choice
 from models.arts import CHANCES as NUMBER_OF_CHANCES
 
-random_word = choice(word_list)
 
-
-def run_game(*, word: str = random_word, chances: int = NUMBER_OF_CHANCES) -> None:
+def run_game(*, word: str, chances: int = NUMBER_OF_CHANCES) -> None:
     word = word.title()
 
     current_word_list = ('_ ' * len(word)).split()
