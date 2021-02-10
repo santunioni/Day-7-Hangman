@@ -12,5 +12,5 @@ The code is written by me, but the visuals were taken from the course.
 - [x] Functioning game.
 - [x] Implemented visuals.
 - [x] Type hinting (python -v >= 3.8).
+- [x] Well documented.
 - [ ] Unit tests.
-- [ ] Well documented.

@@ -1,3 +1,6 @@
+"""This module contain the arts related to the Hangman game. Also contain the number of \
+chances the player have, which is the how_many_stages_arts minus one."""
+
 STAGES = ["""\
   +---+
   |   |

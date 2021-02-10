@@ -1,3 +1,5 @@
+"""This module contain the list of words to be guessed in the Hangman game"""
+
 WORD_LIST = [
     'abruptly',
     'absurd',
