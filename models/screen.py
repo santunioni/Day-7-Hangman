@@ -38,8 +38,8 @@ won. Otherwise it is false
             - Prints the lost screen
             - Return None
         Case the player didn't win or lost yet (chances > 0):
-            - Prints the player chances, current word status and ask for the user guess
-            - Checks for the user input, forbidding numbers and repeated letters
+            - Prints the player chances, current word status and ask for a letter guess
+            - Checks the user input for numbers, repeated letters and several symbols
             - Returns the user guess"""
 
     # Clean the screen
@@ -81,9 +81,8 @@ Already chosen characters: {already_chosen}
         # Set's the guess to only first letter in case the user typed a long string
         char_guess = char_guess.lower()[0]
 
-        # Ask the letter again in case the user guess is a
-        # number, or the guess was already chosen:
-        if char_guess in already_chosen + '0123456789':
+        # Ask the letter again in case the user guess is a number, symbol or the guess was already chosen:
+        if char_guess in '0123456789' + """~`!@#$%^&*()_+{}|:"<>?-=[];',./\ """ + already_chosen:
             char_guess = screen(chances, word_to_display, already_chosen)
 
         return char_guess
